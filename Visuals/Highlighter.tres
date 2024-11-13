@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://de333plkgeoje"]
+
+[ext_resource type="Shader" path="res://Visuals/Highlether.gdshader" id="1_vhcfn"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_vhcfn")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 10.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.5
