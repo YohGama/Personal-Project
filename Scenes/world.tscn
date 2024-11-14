@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnpqcey4pwx8l"]
 
-[ext_resource type="PackedScene" uid="uid://cjmbxe41pbm6" path="res://Scenes/letter_button.tscn" id="1_t1v23"]
-[ext_resource type="Shader" path="res://Visuals/Highlether.gdshader" id="2_dc4ko"]
+[ext_resource type="PackedScene" uid="uid://cjmbxe41pbm6" path="res://Scenes/Word Gameplay/Letter/letter_button.tscn" id="1_t1v23"]
+[ext_resource type="Shader" path="res://Assets/Visuals/Shaders/Highlether.gdshader" id="2_dc4ko"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asvkr"]
 resource_local_to_scene = true

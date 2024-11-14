@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3ubeim4hnfur"
-path="res://.godot/imported/Text Label.png-7c11f1408b28e3e76686d5fb69b59c5c.ctex"
+uid="uid://cefdn8son5mpa"
+path="res://.godot/imported/background.png-38925320aee76854cdfa898864e983e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visuals/Text Label.png"
-dest_files=["res://.godot/imported/Text Label.png-7c11f1408b28e3e76686d5fb69b59c5c.ctex"]
+source_file="res://Assets/Visuals/Drawings/background.png"
+dest_files=["res://.godot/imported/background.png-38925320aee76854cdfa898864e983e4.ctex"]
 
 [params]
 

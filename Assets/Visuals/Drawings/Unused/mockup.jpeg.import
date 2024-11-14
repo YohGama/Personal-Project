@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b40q7ukx065hv"
-path="res://.godot/imported/Text Button.png-c67bd194ee3bad59ec70becaa491d210.ctex"
+uid="uid://dqyqt75sa17b0"
+path="res://.godot/imported/mockup.jpeg-35acb55599a6f451446016fedcb16c1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visuals/Text Button.png"
-dest_files=["res://.godot/imported/Text Button.png-c67bd194ee3bad59ec70becaa491d210.ctex"]
+source_file="res://Assets/Visuals/Drawings/Unused/mockup.jpeg"
+dest_files=["res://.godot/imported/mockup.jpeg-35acb55599a6f451446016fedcb16c1d.ctex"]
 
 [params]
 

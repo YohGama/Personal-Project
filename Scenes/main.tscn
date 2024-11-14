@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cimi7pmcu5cf"]
 
-[ext_resource type="PackedScene" uid="uid://bf6kslngcse2u" path="res://Scenes/Table.tscn" id="1_rqfsv"]
+[ext_resource type="PackedScene" uid="uid://bf6kslngcse2u" path="res://Scenes/Word Gameplay/word_gameplay.tscn" id="1_2j2xq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,5 +10,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Table" parent="." instance=ExtResource("1_rqfsv")]
+[node name="Table" parent="." instance=ExtResource("1_2j2xq")]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2

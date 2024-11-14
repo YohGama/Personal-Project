@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3mka30n44op"
-path="res://.godot/imported/Godot icon.svg-bd1d4e69093574bb9c3e75e1b88185b8.ctex"
+uid="uid://b40q7ukx065hv"
+path="res://.godot/imported/word_button.png-60399f7d59839cb2488f32e007e8bfef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Visuals/Godot icon.svg"
-dest_files=["res://.godot/imported/Godot icon.svg-bd1d4e69093574bb9c3e75e1b88185b8.ctex"]
+source_file="res://Assets/Visuals/Drawings/word_button.png"
+dest_files=["res://.godot/imported/word_button.png-60399f7d59839cb2488f32e007e8bfef.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

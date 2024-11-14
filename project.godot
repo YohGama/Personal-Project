@@ -13,7 +13,7 @@ config_version=5
 config/name="PP"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Visuals/Godot icon.svg"
+config/icon="res://Assets/Visuals/Drawings/Unused/godot_icon.svg"
 
 [autoload]
 
@@ -24,13 +24,14 @@ Global="*res://Coding/global.gd"
 window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/size/mode=2
+window/size/always_on_top=true
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="keep_height"
 
 [file_customization]
 
 folder_colors={
+"res://Assets/": "green",
 "res://Coding/": "red",
-"res://Scenes/": "blue",
-"res://Visuals/": "green"
+"res://Scenes/": "blue"
 }

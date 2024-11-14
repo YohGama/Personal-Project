@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyxgdpdne5yu2"]
+
+[ext_resource type="PackedScene" uid="uid://1f7mx84gfs0w" path="res://Scenes/Word Gameplay/Word/word_button.tscn" id="1_1dxaq"]
+
+[node name="WordButtonContainer" type="HBoxContainer"]
+offset_right = 920.0
+offset_bottom = 140.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="WordButton" parent="." instance=ExtResource("1_1dxaq")]
+layout_mode = 2
+
+[node name="WordButton2" parent="." instance=ExtResource("1_1dxaq")]
+layout_mode = 2
+
+[node name="WordButton3" parent="." instance=ExtResource("1_1dxaq")]
+layout_mode = 2

@@ -1,9 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjmbxe41pbm6"]
+[gd_scene load_steps=11 format=3 uid="uid://cjmbxe41pbm6"]
 
-[ext_resource type="Material" uid="uid://de333plkgeoje" path="res://Visuals/Highlighter.tres" id="1_gewso"]
-[ext_resource type="Texture2D" uid="uid://dg1bosvxyd6o3" path="res://Visuals/Letter button.png" id="1_kix17"]
-[ext_resource type="Script" path="res://Coding/letter_case.gd" id="2_s27s2"]
-[ext_resource type="FontFile" uid="uid://bjt7fw6oqjd3t" path="res://Visuals/Font.ttf" id="3_6a513"]
+[ext_resource type="Material" uid="uid://de333plkgeoje" path="res://Assets/Visuals/Shaders/Highlighter.tres" id="1_gewso"]
+[ext_resource type="Texture2D" uid="uid://dg1bosvxyd6o3" path="res://Assets/Visuals/Drawings/letter_button.png" id="1_kix17"]
+[ext_resource type="Script" path="res://Coding/Word gameplay/letter_button.gd" id="2_s27s2"]
+[ext_resource type="FontFile" uid="uid://bjt7fw6oqjd3t" path="res://Assets/Visuals/Fonts/Font.ttf" id="3_6a513"]
+
+[sub_resource type="Theme" id="Theme_5fv8q"]
+default_base_scale = 1.0
+default_font = ExtResource("3_6a513")
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2f0n"]
+resource_local_to_scene = true
+font = ExtResource("3_6a513")
+font_size = 160
+font_color = Color(0, 0, 0.25, 1)
 
 [sub_resource type="Animation" id="Animation_jlom4"]
 length = 0.001
@@ -46,18 +56,18 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Letter:theme_override_colors/font_color")
+tracks/3/path = NodePath("Letter:label_settings:font_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0.235294, 1)]
+"values": [Color(0, 0, 0.25, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_kyhju"]
-resource_name = "Selected"
+resource_name = "selected"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -98,18 +108,18 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Letter:theme_override_colors/font_color")
+tracks/3/path = NodePath("Letter:label_settings:font_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0.235294, 1), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0.25, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ii4fv"]
-resource_name = "Unselected"
+resource_name = "unselected"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -150,57 +160,53 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Letter:theme_override_colors/font_color")
+tracks/3/path = NodePath("Letter:label_settings:font_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0.235294, 1)]
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0.25, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0qa1"]
 _data = {
 "RESET": SubResource("Animation_jlom4"),
-"Selected": SubResource("Animation_kyhju"),
-"Unselected": SubResource("Animation_ii4fv")
+"selected": SubResource("Animation_kyhju"),
+"unselected": SubResource("Animation_ii4fv")
 }
 
-[sub_resource type="Theme" id="Theme_5fv8q"]
-default_base_scale = 1.0
-default_font = ExtResource("3_6a513")
-default_font_size = 175
-
-[node name="LetterButton" type="TextureButton" node_paths=PackedStringArray("letterLabel", "animation")]
+[node name="LetterButton" type="TextureButton" node_paths=PackedStringArray("letter_label", "_animation")]
 material = ExtResource("1_gewso")
-anchors_preset = -1
-anchor_right = 0.148148
-anchor_bottom = 0.09375
+offset_right = 160.0
+offset_bottom = 180.0
 pivot_offset = Vector2(80, 90)
-size_flags_horizontal = 4
-size_flags_vertical = 4
 texture_normal = ExtResource("1_kix17")
 script = ExtResource("2_s27s2")
-letterLabel = NodePath("Letter")
-animation = NodePath("Animation")
-metadata/_edit_use_anchors_ = true
+letter_label = NodePath("Letter")
+_animation = NodePath("Animation")
+
+[node name="Letter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5fv8q")
+text = "a"
+label_settings = SubResource("LabelSettings_v2f0n")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_u0qa1")
 }
-
-[node name="Letter" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.28125
-anchor_top = -0.0833333
-anchor_right = 0.71875
-anchor_bottom = 1.08889
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_5fv8q")
-theme_override_colors/font_color = Color(0, 0, 0.235294, 1)
-horizontal_alignment = 1
-vertical_alignment = 1

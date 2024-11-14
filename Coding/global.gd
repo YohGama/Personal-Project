@@ -1,7 +1,6 @@
 extends Node
 
 
-# Define a dictionary where keys are letters and values are probabilities
 var letter_probabilities = {
 	"E": 12, "A": 12, "O": 9, "S": 7, "R": 7, "N": 6, "I": 6, "D": 5,
 	"L": 5, "C": 4, "T": 4, "U": 4, "M": 3, "P": 3, "B": 2, "G": 2,
@@ -9,30 +8,25 @@ var letter_probabilities = {
 	"K": 0.1, "W": 0.1
 }
 
-var total_prob = 0.0  # sum of all probabilities
+var _total_probabilities = 0.0
 
 func _ready() -> void:
 
 	for letter in letter_probabilities.keys() :
-		total_prob += letter_probabilities[letter]
+		_total_probabilities = _total_probabilities + letter_probabilities [letter]
 	for letter in letter_probabilities.keys():
-		letter_probabilities[letter] /= total_prob  
+		letter_probabilities [letter] = letter_probabilities [letter] / _total_probabilities  
 
 
 
 
 func choose_random_letter() -> String:
 
-# scale each probability to sum to 1
-
-	var random_value = randf()  # Generate a random number between 0 and 1
+	var random_value = randf()
 	var cumulative_probability = 0.0
-	# Loop through each letter and its probability in the dictionary
+
 	for letter in letter_probabilities.keys():
 		cumulative_probability += letter_probabilities[letter]
 		if random_value < cumulative_probability :
-
 			return letter
-
-	# Default case (should not hit this if probabilities sum to 1)
 	return letter_probabilities.keys().back()

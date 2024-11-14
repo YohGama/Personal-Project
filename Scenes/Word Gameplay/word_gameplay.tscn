@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf6kslngcse2u"]
+
+[ext_resource type="Texture2D" uid="uid://cefdn8son5mpa" path="res://Assets/Visuals/Drawings/background.png" id="1_3e1pe"]
+[ext_resource type="PackedScene" uid="uid://cmdc2fwvawpxl" path="res://Scenes/Word Gameplay/Word/word_label.tscn" id="3_m2nwb"]
+[ext_resource type="PackedScene" uid="uid://tdccr3565iva" path="res://Scenes/Word Gameplay/Letter/letter_buttons_container.tscn" id="4_qh441"]
+[ext_resource type="PackedScene" uid="uid://dyxgdpdne5yu2" path="res://Scenes/Word Gameplay/Word/word_button_container.tscn" id="7_ux6y4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -515.0
+offset_top = -743.0
+offset_right = 519.0
+offset_bottom = 815.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3e1pe")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+use_top_left = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="WordLabel" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WordLabel" parent="CenterContainer/VBoxContainer/WordLabel" instance=ExtResource("3_m2nwb")]
+layout_mode = 2
+
+[node name="LetterButtonContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LetterButtonContainer" parent="CenterContainer/VBoxContainer/LetterButtonContainer" instance=ExtResource("4_qh441")]
+layout_mode = 2
+
+[node name="WordButtonContainer" parent="CenterContainer/VBoxContainer" instance=ExtResource("7_ux6y4")]
+layout_mode = 2
