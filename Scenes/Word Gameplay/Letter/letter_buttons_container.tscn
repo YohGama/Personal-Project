@@ -260,7 +260,8 @@ theme_override_constants/v_separation = 15
 columns = 5
 script = ExtResource("1_hlbub")
 grid_buttons = [NodePath("A1"), NodePath("A2"), NodePath("A3"), NodePath("A4"), NodePath("A5"), NodePath("B1"), NodePath("B2"), NodePath("B3"), NodePath("B4"), NodePath("B5"), NodePath("C1"), NodePath("C2"), NodePath("C3"), NodePath("C4"), NodePath("C5"), NodePath("D1"), NodePath("D2"), NodePath("D3"), NodePath("D4"), NodePath("D5"), NodePath("E1"), NodePath("E2"), NodePath("E3"), NodePath("E4"), NodePath("E5")]
-metadata/_edit_group_ = true
+maximum_word_length = 5
+minimum_word_length = 3
 
 [node name="A1" parent="." instance=ExtResource("1_bicem")]
 material = SubResource("ShaderMaterial_3ax12")

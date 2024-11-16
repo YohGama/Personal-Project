@@ -11,6 +11,7 @@ default_base_scale = 1.0
 default_font = ExtResource("2_674d2")
 
 [sub_resource type="LabelSettings" id="LabelSettings_uwfy7"]
+resource_local_to_scene = true
 font = ExtResource("2_674d2")
 font_size = 100
 font_color = Color(0, 0, 0.25, 1)

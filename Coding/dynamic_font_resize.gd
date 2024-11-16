@@ -13,8 +13,6 @@ func fit_text() :
 	var font_size = max_font_size
 
 	while font_size >= min_font_size:
-		print("font size : "+str(font_size))
-		print("label : "+str(label_settings.font_size))
 		label_settings.font_size = font_size
 		var text_size = get_minimum_size()
 
@@ -23,7 +21,6 @@ func fit_text() :
 		font_size -= 1
 
 	label_settings.font_size = font_size
-	#size = custom_minimum_size
 
 func _ready():
 	fit_text()

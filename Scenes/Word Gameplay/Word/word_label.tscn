@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmdc2fwvawpxl"]
+[gd_scene load_steps=6 format=3 uid="uid://cmdc2fwvawpxl"]
 
+[ext_resource type="Script" path="res://Coding/Word gameplay/word_label.gd" id="1_78b5q"]
 [ext_resource type="Texture2D" uid="uid://c3ubeim4hnfur" path="res://Assets/Visuals/Drawings/word_label.png" id="1_brguy"]
 [ext_resource type="FontFile" uid="uid://bjt7fw6oqjd3t" path="res://Assets/Visuals/Fonts/Font.ttf" id="2_j1nmc"]
+[ext_resource type="Script" path="res://Coding/dynamic_font_resize.gd" id="4_x84jy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gpbkc"]
 font = ExtResource("2_j1nmc")
 font_size = 150
+font_color = Color(0, 0, 0.25, 1)
 
-[node name="WordLabel" type="Control"]
+[node name="WordLabel" type="Control" node_paths=PackedStringArray("label")]
 custom_minimum_size = Vector2(810, 150)
 layout_mode = 3
 anchors_preset = 0
@@ -15,6 +18,8 @@ offset_right = 810.0
 offset_bottom = 150.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_78b5q")
+label = NodePath("Label")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,19 +37,22 @@ grow_vertical = 2
 texture = ExtResource("1_brguy")
 
 [node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(720, 180)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
+offset_left = -355.0
 offset_top = -90.0
-offset_right = 82.5
+offset_right = 365.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "CAT"
 label_settings = SubResource("LabelSettings_gpbkc")
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_x84jy")
+min_font_size = 75
+max_font_size = 150

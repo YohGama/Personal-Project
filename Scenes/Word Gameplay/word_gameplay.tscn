@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf6kslngcse2u"]
+[gd_scene load_steps=6 format=3 uid="uid://bf6kslngcse2u"]
 
 [ext_resource type="Texture2D" uid="uid://cefdn8son5mpa" path="res://Assets/Visuals/Drawings/background.png" id="1_3e1pe"]
+[ext_resource type="Script" path="res://Coding/Word gameplay/word_gameplay_logic.gd" id="1_gftpu"]
 [ext_resource type="PackedScene" uid="uid://cmdc2fwvawpxl" path="res://Scenes/Word Gameplay/Word/word_label.tscn" id="3_m2nwb"]
 [ext_resource type="PackedScene" uid="uid://tdccr3565iva" path="res://Scenes/Word Gameplay/Letter/letter_buttons_container.tscn" id="4_qh441"]
 [ext_resource type="PackedScene" uid="uid://dyxgdpdne5yu2" path="res://Scenes/Word Gameplay/Word/word_button_container.tscn" id="7_ux6y4"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("word_label", "letter_button_container", "word_button_container")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_gftpu")
+word_label = NodePath("CenterContainer/VBoxContainer/WordLabel/WordLabel")
+letter_button_container = NodePath("CenterContainer/VBoxContainer/LetterButtonContainer/LetterButtonContainer")
+word_button_container = NodePath("CenterContainer/VBoxContainer/WordButtonContainer")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 2
@@ -29,6 +34,7 @@ theme_override_constants/separation = 80
 alignment = 1
 
 [node name="WordLabel" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+process_mode = 1
 layout_mode = 2
 alignment = 1
 

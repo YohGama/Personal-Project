@@ -1,18 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyxgdpdne5yu2"]
+[gd_scene load_steps=7 format=3 uid="uid://dyxgdpdne5yu2"]
 
 [ext_resource type="PackedScene" uid="uid://1f7mx84gfs0w" path="res://Scenes/Word Gameplay/Word/word_button.tscn" id="1_1dxaq"]
+[ext_resource type="Script" path="res://Coding/Word gameplay/word_button_container.gd" id="1_3wy2s"]
+[ext_resource type="Shader" path="res://Assets/Visuals/Shaders/Highlether.gdshader" id="3_u2avm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_speay"]
+resource_local_to_scene = true
+shader = ExtResource("3_u2avm")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpqai"]
+resource_local_to_scene = true
+shader = ExtResource("3_u2avm")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_js40j"]
+resource_local_to_scene = true
+shader = ExtResource("3_u2avm")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
 
 [node name="WordButtonContainer" type="HBoxContainer"]
 offset_right = 920.0
 offset_bottom = 140.0
 theme_override_constants/separation = 10
 alignment = 1
+script = ExtResource("1_3wy2s")
 
 [node name="WordButton" parent="." instance=ExtResource("1_1dxaq")]
+material = SubResource("ShaderMaterial_speay")
 layout_mode = 2
 
 [node name="WordButton2" parent="." instance=ExtResource("1_1dxaq")]
+material = SubResource("ShaderMaterial_wpqai")
 layout_mode = 2
 
 [node name="WordButton3" parent="." instance=ExtResource("1_1dxaq")]
+material = SubResource("ShaderMaterial_js40j")
 layout_mode = 2

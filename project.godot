@@ -17,7 +17,9 @@ config/icon="res://Assets/Visuals/Drawings/Unused/godot_icon.svg"
 
 [autoload]
 
-Global="*res://Coding/global.gd"
+Global="*res://Coding/Autoloads/global.gd"
+SignalBus="*res://Coding/Autoloads/signal_bus.gd"
+ResourceManager="*res://Coding/Autoloads/resource_manager.gd"
 
 [display]
 
