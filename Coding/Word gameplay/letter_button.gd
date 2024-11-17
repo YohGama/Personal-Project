@@ -5,6 +5,8 @@ class_name LetterButton
 @export var _animation : AnimationPlayer
 
 var is_selected : bool = false
+var is_deleted : bool = false
+var is_used : bool = false
 var letter : String = ""
 
 signal selected
@@ -14,8 +16,10 @@ func _ready() -> void :
 	pressed.connect( clicked )
 	choose_letter()
 func choose_letter() -> void :
-	letter_label.text = Global.choose_random_letter()
-	letter = letter_label.text
+	var new_letter = Global.choose_random_letter()
+	letter_label.text = new_letter
+	letter = new_letter
+	
 #region Clicking logic
 
 func clicked() -> void :
@@ -38,5 +42,6 @@ func delete() -> void :
 	disabled = true
 	letter_label.queue_free()
 	_animation.queue_free()
+	letter = ""
  
 #endregion

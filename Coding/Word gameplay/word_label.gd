@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 func set_text( new_text : String ) :
 	text = new_text
 
-func _on_word_logic_completed() -> void :
+func _on_word_logic_completed(word,found) -> void :
 	text = ""

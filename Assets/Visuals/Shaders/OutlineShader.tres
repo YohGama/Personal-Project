@@ -5,8 +5,8 @@
 [resource]
 resource_local_to_scene = true
 shader = ExtResource("1_64fa5")
-shader_parameter/color = Color(0.972549, 0.705882, 0.113725, 1)
-shader_parameter/width = 0.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 1.8
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true

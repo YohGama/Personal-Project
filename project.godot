@@ -27,8 +27,8 @@ window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/size/mode=2
 window/size/always_on_top=true
+window/energy_saving/keep_screen_on=false
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
 
 [file_customization]
 
@@ -37,3 +37,7 @@ folder_colors={
 "res://Coding/": "red",
 "res://Scenes/": "blue"
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.691354, 0.691358, 0.691357, 1)

@@ -21,7 +21,7 @@ func get_random_button() :
 	var _button = randi() % get_children().size()
 	return get_children()[_button]
 
-func _on_word_logic_completed() -> void :
+func _on_word_logic_completed(word,found) -> void :
 	for button in word_buttons :
 		button.word = ""
 		if button.is_selected == true :

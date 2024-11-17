@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tdccr3565iva" path="res://Scenes/Word Gameplay/Letter/letter_buttons_container.tscn" id="4_qh441"]
 [ext_resource type="PackedScene" uid="uid://dyxgdpdne5yu2" path="res://Scenes/Word Gameplay/Word/word_button_container.tscn" id="7_ux6y4"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("word_label", "letter_button_container", "word_button_container")]
+[node name="Word logic" type="Control" node_paths=PackedStringArray("word_label", "letter_button_container", "word_button_container")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_gftpu")
@@ -15,14 +15,34 @@ letter_button_container = NodePath("CenterContainer/VBoxContainer/LetterButtonCo
 word_button_container = NodePath("CenterContainer/VBoxContainer/WordButtonContainer")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = -515.0
-offset_top = -743.0
-offset_right = 519.0
-offset_bottom = 815.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -810.0
+offset_right = 530.0
+offset_bottom = 810.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3e1pe")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -507.5
+offset_top = -590.0
+offset_right = 507.5
+offset_bottom = 590.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.25, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -47,6 +67,7 @@ alignment = 1
 
 [node name="LetterButtonContainer" parent="CenterContainer/VBoxContainer/LetterButtonContainer" instance=ExtResource("4_qh441")]
 layout_mode = 2
+minimum_word_length = 1
 
 [node name="WordButtonContainer" parent="CenterContainer/VBoxContainer" instance=ExtResource("7_ux6y4")]
 layout_mode = 2
