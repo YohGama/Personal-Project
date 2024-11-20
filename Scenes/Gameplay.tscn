@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkxrgg7agt4vf"]
+[gd_scene load_steps=4 format=3 uid="uid://dkxrgg7agt4vf"]
 
+[ext_resource type="Script" path="res://Coding/gameplay.gd" id="1_x4ldt"]
 [ext_resource type="PackedScene" uid="uid://dvvt2vxownfkh" path="res://Scenes/score.tscn" id="1_xals5"]
 [ext_resource type="PackedScene" uid="uid://bf6kslngcse2u" path="res://Scenes/Word Gameplay/word_gameplay.tscn" id="2_wshug"]
 
-[node name="Gameplay" type="Control"]
+[node name="Gameplay" type="Control" node_paths=PackedStringArray("word_logic", "score_logic")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_x4ldt")
+word_logic = NodePath("Word logic")
+score_logic = NodePath("Score logic")
 
 [node name="Score logic" parent="." instance=ExtResource("1_xals5")]
 layout_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ck1ksuqmet1nn"]
 
-[ext_resource type="Script" path="res://Scenes/SceneManager.gd" id="1_tpxhb"]
+[ext_resource type="Script" path="res://Scenes/scene_manager.gd" id="1_tpxhb"]
 [ext_resource type="Shader" path="res://Coding/Circle.gdshader" id="2_5tc01"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_drvpg"]
@@ -66,7 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.241156, 0.241156, 0.241156, 1)
+color = Color(0.181502, 0.181317, 0.312575, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
