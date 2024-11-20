@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cimi7pmcu5cf"]
+[gd_scene load_steps=3 format=3 uid="uid://cimi7pmcu5cf"]
 
-[ext_resource type="PackedScene" uid="uid://bf6kslngcse2u" path="res://Scenes/Word Gameplay/word_gameplay.tscn" id="1_2j2xq"]
 [ext_resource type="Script" path="res://Coding/main.gd" id="1_xpfic"]
-[ext_resource type="PackedScene" uid="uid://dvvt2vxownfkh" path="res://Scenes/score.tscn" id="3_68xcc"]
+[ext_resource type="PackedScene" uid="uid://ck1ksuqmet1nn" path="res://Scenes/SceneManager.tscn" id="3_d2suq"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("word_logic", "score_logic")]
+[node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,28 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xpfic")
-word_logic = NodePath("Word logic")
-score_logic = NodePath("Score logic")
 
-[node name="Word logic" parent="." instance=ExtResource("1_2j2xq")]
+[node name="SceneManager" parent="." instance=ExtResource("3_d2suq")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 90.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Score logic" parent="." instance=ExtResource("3_68xcc")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.0458333
-anchor_right = 0.5
-anchor_bottom = 0.0458333
-offset_top = 62.0
-offset_bottom = 62.0
-metadata/_edit_use_anchors_ = true
