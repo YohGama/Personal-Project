@@ -1,0 +1,515 @@
+[gd_scene load_steps=40 format=3 uid="uid://tdccr3565iva"]
+
+[ext_resource type="PackedScene" uid="uid://cjmbxe41pbm6" path="res://Scenes/Word Gameplay/Letter/letter_button.tscn" id="1_bicem"]
+[ext_resource type="Script" path="res://Coding/Word gameplay/letter_button_container.gd" id="1_hlbub"]
+[ext_resource type="Shader" path="res://Assets/Visuals/Shaders/Highlether.gdshader" id="2_w04b0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45rle"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8y2q"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ie0vm"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yp8cn"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7kkh"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efnex"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vg0eh"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my8uv"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0bdpj"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edf41"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wbfj"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efu8u"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8apb6"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uesgh"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6e25k"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fjm7"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amqo4"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cajt4"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1p73"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_653jv"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8iu7"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6ndr"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7xmu"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdgbr"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4vwh"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rjjx"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4xro"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hhugm"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivxvx"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ga5q"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4aiwt"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnndl"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6t12s"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vttxt"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u8n1"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojsfq"]
+resource_local_to_scene = true
+shader = ExtResource("2_w04b0")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[node name="Grid" type="GridContainer"]
+columns = 6
+script = ExtResource("1_hlbub")
+maximum_word_length = 6
+minimum_word_length = 3
+
+[node name="A1" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_45rle")
+layout_mode = 2
+
+[node name="A2" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_d8y2q")
+layout_mode = 2
+
+[node name="A3" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_ie0vm")
+layout_mode = 2
+
+[node name="A4" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_yp8cn")
+layout_mode = 2
+
+[node name="A5" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_o7kkh")
+layout_mode = 2
+
+[node name="A6" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_efnex")
+layout_mode = 2
+
+[node name="B1" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_vg0eh")
+layout_mode = 2
+
+[node name="B2" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_my8uv")
+layout_mode = 2
+
+[node name="B3" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_0bdpj")
+layout_mode = 2
+
+[node name="B4" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_edf41")
+layout_mode = 2
+
+[node name="B5" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_4wbfj")
+layout_mode = 2
+
+[node name="B6" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_efu8u")
+layout_mode = 2
+
+[node name="C1" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_8apb6")
+layout_mode = 2
+
+[node name="C2" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_uesgh")
+layout_mode = 2
+
+[node name="C3" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_6e25k")
+layout_mode = 2
+
+[node name="C4" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_1fjm7")
+layout_mode = 2
+
+[node name="C5" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_amqo4")
+layout_mode = 2
+
+[node name="C6" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_cajt4")
+layout_mode = 2
+
+[node name="D1" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_u1p73")
+layout_mode = 2
+
+[node name="D2" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_653jv")
+layout_mode = 2
+
+[node name="D3" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_i8iu7")
+layout_mode = 2
+
+[node name="D4" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_m6ndr")
+layout_mode = 2
+
+[node name="D5" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_w7xmu")
+layout_mode = 2
+
+[node name="D6" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_jdgbr")
+layout_mode = 2
+
+[node name="E1" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_s4vwh")
+layout_mode = 2
+
+[node name="E2" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_7rjjx")
+layout_mode = 2
+
+[node name="E3" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_i4xro")
+layout_mode = 2
+
+[node name="E4" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_hhugm")
+layout_mode = 2
+
+[node name="E5" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_ivxvx")
+layout_mode = 2
+
+[node name="E6" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_3ga5q")
+layout_mode = 2
+
+[node name="F1" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_4aiwt")
+layout_mode = 2
+
+[node name="F2" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_mnndl")
+layout_mode = 2
+
+[node name="F3" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_6t12s")
+layout_mode = 2
+
+[node name="F4" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_vttxt")
+layout_mode = 2
+
+[node name="F5" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_2u8n1")
+layout_mode = 2
+
+[node name="F6" parent="." instance=ExtResource("1_bicem")]
+material = SubResource("ShaderMaterial_ojsfq")
+layout_mode = 2

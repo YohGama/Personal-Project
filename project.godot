@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="PP"
+run/main_scene="res://Scenes/main.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://Assets/Visuals/Drawings/Unused/godot_icon.svg"
+
+[autoload]
+
+Global="*res://Coding/Autoloads/global.gd"
+SignalBus="*res://Coding/Autoloads/signal_bus.gd"
+ResourceManager="*res://Coding/Autoloads/resource_manager.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/mode=2
+window/size/always_on_top=true
+window/energy_saving/keep_screen_on=false
+window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "green",
+"res://Coding/": "red",
+"res://Scenes/": "blue"
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.691354, 0.691358, 0.691357, 1)
+occlusion_culling/use_occlusion_culling=true

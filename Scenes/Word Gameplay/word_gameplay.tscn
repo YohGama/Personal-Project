@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf6kslngcse2u"]
+
+[ext_resource type="Texture2D" uid="uid://cefdn8son5mpa" path="res://Assets/Visuals/Drawings/background.png" id="1_3e1pe"]
+[ext_resource type="Script" path="res://Coding/Word gameplay/word_gameplay_logic.gd" id="1_gftpu"]
+[ext_resource type="PackedScene" uid="uid://cmdc2fwvawpxl" path="res://Scenes/Word Gameplay/Word/word_label.tscn" id="3_m2nwb"]
+[ext_resource type="PackedScene" uid="uid://tdccr3565iva" path="res://Scenes/Word Gameplay/Letter/letter_buttons_container.tscn" id="4_qh441"]
+[ext_resource type="PackedScene" uid="uid://dyxgdpdne5yu2" path="res://Scenes/Word Gameplay/Word/word_button_container.tscn" id="7_ux6y4"]
+
+[node name="Word logic" type="Control" node_paths=PackedStringArray("word_label", "letter_button_container", "word_button_container")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gftpu")
+word_label = NodePath("CenterContainer/VBoxContainer/WordLabel/WordLabel")
+letter_button_container = NodePath("CenterContainer/VBoxContainer/LetterButtonContainer/LetterButtonContainer")
+word_button_container = NodePath("CenterContainer/VBoxContainer/WordButtonContainer")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -810.0
+offset_right = 530.0
+offset_bottom = 810.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3e1pe")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -507.5
+offset_top = -590.0
+offset_right = 507.5
+offset_bottom = 590.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.25, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+use_top_left = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="WordLabel" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+process_mode = 1
+layout_mode = 2
+alignment = 1
+
+[node name="WordLabel" parent="CenterContainer/VBoxContainer/WordLabel" instance=ExtResource("3_m2nwb")]
+layout_mode = 2
+
+[node name="LetterButtonContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LetterButtonContainer" parent="CenterContainer/VBoxContainer/LetterButtonContainer" instance=ExtResource("4_qh441")]
+layout_mode = 2
+minimum_word_length = 1
+
+[node name="WordButtonContainer" parent="CenterContainer/VBoxContainer" instance=ExtResource("7_ux6y4")]
+layout_mode = 2

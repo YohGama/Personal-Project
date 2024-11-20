@@ -1,0 +1,214 @@
+[gd_scene load_steps=12 format=3 uid="uid://1f7mx84gfs0w"]
+
+[ext_resource type="Material" uid="uid://de333plkgeoje" path="res://Assets/Visuals/Shaders/Highlighter.tres" id="1_2of5c"]
+[ext_resource type="Texture2D" uid="uid://b40q7ukx065hv" path="res://Assets/Visuals/Drawings/word_button.png" id="1_tucuu"]
+[ext_resource type="FontFile" uid="uid://bjt7fw6oqjd3t" path="res://Assets/Visuals/Fonts/Font.ttf" id="2_674d2"]
+[ext_resource type="Script" path="res://Coding/Word gameplay/word_button.gd" id="2_emwcs"]
+[ext_resource type="Script" path="res://Coding/dynamic_font_resize.gd" id="5_qa6ux"]
+
+[sub_resource type="Theme" id="Theme_frmwx"]
+default_base_scale = 1.0
+default_font = ExtResource("2_674d2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwfy7"]
+resource_local_to_scene = true
+font = ExtResource("2_674d2")
+font_size = 100
+font_color = Color(0, 0, 0.25, 1)
+
+[sub_resource type="Animation" id="Animation_jlom4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/darkness_factor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/outline_width")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letter:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0.25, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kyhju"]
+resource_name = "selected"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/darkness_factor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, 0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/outline_width")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, 10.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letter:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0.25, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ii4fv"]
+resource_name = "unselected"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/darkness_factor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.5, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/outline_width")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letter:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0.25, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0qa1"]
+_data = {
+"RESET": SubResource("Animation_jlom4"),
+"selected": SubResource("Animation_kyhju"),
+"unselected": SubResource("Animation_ii4fv")
+}
+
+[node name="WordButton" type="TextureButton" node_paths=PackedStringArray("word_label", "_animation")]
+material = ExtResource("1_2of5c")
+pivot_offset = Vector2(150, 70)
+texture_normal = ExtResource("1_tucuu")
+script = ExtResource("2_emwcs")
+word_label = NodePath("Letter")
+_animation = NodePath("Animation")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter" type="Label" parent="."]
+custom_minimum_size = Vector2(280, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -60.0
+offset_right = 140.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_frmwx")
+label_settings = SubResource("LabelSettings_uwfy7")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_qa6ux")
+min_font_size = 50
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u0qa1")
+}
