@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck1ksuqmet1nn"]
+
+[ext_resource type="Script" path="res://Coding/Autoloads/scene_manager.gd" id="1_oghu6"]
+[ext_resource type="Shader" path="res://Assets/Visuals/Shaders/Circle.gdshader" id="2_yyn72"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drvpg"]
+shader = ExtResource("2_yyn72")
+shader_parameter/circle_size = 0.0
+shader_parameter/screen_width = 1080.0
+shader_parameter/screen_height = 1920.0
+
+[sub_resource type="Animation" id="Animation_5hcnt"]
+resource_name = "Circle"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(60, -0.25, 0, 0.266667, 13, 17, -0.25, 0, 0.25, 0, 0, -0.233333, -20, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.566667)
+}
+
+[sub_resource type="Animation" id="Animation_yprnu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3evgr"]
+_data = {
+"Circle": SubResource("Animation_5hcnt"),
+"RESET": SubResource("Animation_yprnu")
+}
+
+[node name="SceneManager" type="Control" node_paths=PackedStringArray("_frontground", "_animator")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oghu6")
+GAMEPLAY = "res://Scenes/gameplay.tscn"
+_frontground = NodePath("ColorRect")
+_animator = NodePath("AnimationPlayer")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 5
+material = SubResource("ShaderMaterial_drvpg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.181502, 0.181317, 0.312575, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3evgr")
+}

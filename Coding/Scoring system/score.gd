@@ -18,6 +18,8 @@ func _word_based_add_points ( word : String ) -> void :
 			_add_points(10)
 		5 :
 			_add_points(20)
+		6 :
+			_add_points(40)
 
 func _update_score_label ( new_score : float ) -> void :
 	score_label.text = str(roundi(score))

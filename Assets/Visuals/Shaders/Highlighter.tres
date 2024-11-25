@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 shader = ExtResource("1_3jfqm")
-shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/outline_width = 0.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false

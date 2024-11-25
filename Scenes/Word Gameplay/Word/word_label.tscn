@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmdc2fwvawpxl"]
+[gd_scene load_steps=7 format=3 uid="uid://cmdc2fwvawpxl"]
 
 [ext_resource type="Script" path="res://Coding/Word gameplay/word_label.gd" id="1_78b5q"]
 [ext_resource type="Texture2D" uid="uid://c3ubeim4hnfur" path="res://Assets/Visuals/Drawings/word_label.png" id="1_brguy"]
 [ext_resource type="FontFile" uid="uid://bjt7fw6oqjd3t" path="res://Assets/Visuals/Fonts/Font.ttf" id="2_j1nmc"]
+[ext_resource type="Material" uid="uid://7mfixe5x1xi8" path="res://Assets/Visuals/Shaders/OutlineShader.tres" id="2_t18r4"]
 [ext_resource type="Script" path="res://Coding/dynamic_font_resize.gd" id="4_x84jy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gpbkc"]
@@ -22,6 +23,7 @@ script = ExtResource("1_78b5q")
 label = NodePath("Label")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("2_t18r4")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

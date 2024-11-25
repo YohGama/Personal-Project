@@ -38,6 +38,7 @@ func unselect() -> void :
 	emit_signal("unselected")
 
 func delete() -> void :
+	
 	modulate = Color(1, 1, 1, 0)
 	disabled = true
 	letter_label.queue_free()

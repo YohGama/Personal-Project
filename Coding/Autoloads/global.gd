@@ -39,7 +39,7 @@ var word_bank = {
 	"caminar": "marcher", "nadar": "nager", "cocinar": "cuisiner", 
 	"ayudar": "aider", "comprar": "acheter", "vender": "vendre", "estudiar": "étudier", 
 	"entrar": "entrer", "salir": "sortir", "llegar": "arriver", "dejar": "laisser",
-	"morir": "mourir", "llorar": "pleurer", "reír": "rire",
+	"morir": "mourir", "llorar": "pleurer", "reír": "rire","nanguy":"bête",
 
 }
 

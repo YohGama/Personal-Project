@@ -6,8 +6,10 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_m8nou"]
 font = ExtResource("1_wyqty")
-font_size = 300
-font_color = Color(0, 0, 0.25, 1)
+font_size = 200
+font_color = Color(0.784314, 0.862745, 1, 1)
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Score logic" type="Control" node_paths=PackedStringArray("score_label")]
 layout_mode = 3
@@ -22,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 100
-text = "9000"
+text = "100"
 label_settings = SubResource("LabelSettings_m8nou")
 horizontal_alignment = 1
 vertical_alignment = 1

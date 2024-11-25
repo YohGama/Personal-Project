@@ -1,7 +1,8 @@
 extends Control
 class_name LetterButtonContainer
 
-@export var grid_buttons : Array[LetterButton] = []
+var grid_buttons : Array[LetterButton] = []
+var grid_buttons_xy : Array = []
 var grid_letters : Array = []
 var selected_buttons : Array[LetterButton] = []
 var selected_letters : Array = []
@@ -12,33 +13,32 @@ var _visited_tiles : Array = []
 var _neighbors = [-1, 0, 1]
 var trie : Dictionary = {}
 
-@export var maximum_word_length : int
-@export var minimum_word_length : int
+@export var minimum_words_per_grid : int = 15
+@export var grid_size : int = 6
+@export var maximum_word_length : int = 6
+@export var minimum_word_length : int = 3
 
 signal _finished_unselecting
 signal selected_word ( word : String )
 
 func _ready() -> void :
 	SignalBus.word_logic_completed.connect(_on_word_logic_completed)
+	_initialize_grid_buttons_xy()
+	_initialize_grid_buttons()
 	_initialize_buttons(grid_buttons)
 	_update_grid_letters()
 	build_trie()
 	check_dead_grids()
-	#reset_banned_letters()
 
 		
 func _process(delta) -> void :
-	_update_grid_letters()
-	_update_current_word(selected_letters)
 	_recognize_words()
+	_update_current_word(selected_letters)
 
 func _on_word_logic_completed(word,found) -> void :
 	if found == true :
 		for button in selected_buttons :
 			button.is_used = true
-	#if found == true :
-		#ban_used_letters(current_word)
-	if found == true :
 		banned_words.append(word)
 	for button in selected_buttons :
 		_unselect(button)
@@ -53,41 +53,44 @@ func _on_word_logic_completed(word,found) -> void :
 func find_words() -> Array:
 
 	var found_words = []
-	_update_grid_letters()
+	var found_nodes = []
 	_initialize_visited_tiles()
 
-	for x in range(0,5):
-		for y in range(0,5):
-			search_word(x,y,"",found_words)
+	for x in range(0,grid_size):
+		for y in range(0,grid_size):
+			search_word(x,y,"",found_nodes,found_words)
 
 	for word in banned_words :
-		if banned_words.has(word) :
-			found_words.erase(word)
+		found_words.erase(word)
 
-	print(banned_words)
-	print(found_words)
+	print ( found_words )
 	return found_words
-func search_word(x, y, _current_word: String, found_words: Array) -> void:
+func search_word(x, y, _current_word: String, used_nodes:Array, found_words: Array) -> void:
 
 
-	var grid_width = grid_letters.size()
-	var grid_height = grid_letters[0].size()
+	if _is_out_of_bounds_or_visited(x, y) == true :
+		return
 
-	if x < 0 or x >= grid_width or y < 0 or y >= grid_height or _visited_tiles[x][y] : return
-	#if banned_letters.has(grid_letters[x][y].to_lower()) == true : return
-	_current_word += grid_letters[x][y].to_lower()
+	var letter = grid_letters[x][y]
+	var button = grid_buttons_xy[x][y]
+
+	_current_word += letter.to_lower()
+	used_nodes.append(button)
 
 	if _current_word.length() > 6 : return
 	if is_valid_prefix(_current_word) == false : return
-	if is_word(_current_word) == true and found_words.has(_current_word)== false : found_words.append(_current_word)
+	if is_word(_current_word) == true and found_words.has(_current_word) == false : found_words.append(_current_word)
 
 	_visited_tiles[x][y] = true
 	for dx in [-1, 0, 1] :
 		for dy in [-1, 0, 1] :
 			if not ( dx == 0 and dy == 0 ) :
-				search_word ( x + dx, y + dy, _current_word, found_words )
+				search_word ( x + dx, y + dy, _current_word, used_nodes, found_words )
 	_visited_tiles[x][y] = false
+	used_nodes.pop_back()
 
+func _is_out_of_bounds_or_visited(x, y) -> bool:
+	return x < 0 or x >= grid_size or y < 0 or y >= grid_size or _visited_tiles[x][y]
 func build_trie() -> void :
 	for word in Global.word_bank :
 		add_to_trie(word)
@@ -117,17 +120,22 @@ func _initialize_visited_tiles() -> void :
 	for i in range(6):
 		_visited_tiles.append([false, false, false, false, false,false])
 func check_dead_grids() -> void :
-	while find_words().size() < 15 :
+	while find_words().size() < minimum_words_per_grid :
 		_initialize_buttons(grid_buttons)
 		_update_grid_letters()
-#func ban_used_letters(word: String) -> void:
-	#for letter in word:
-		#if not banned_letters.has(letter):
-			#banned_letters.append(letter)
-#func reset_banned_letters() -> void:
-	#banned_letters.clear()
 #endregion
 #region Selected button array logic
+func _initialize_grid_buttons_xy() -> void :
+	grid_buttons_xy.clear()
+	for button in get_children() :
+		if button is LetterButton :
+			grid_buttons_xy.append(button)
+	grid_buttons_xy = Global.split_string(grid_buttons_xy,6)
+func _initialize_grid_buttons() -> void :
+	grid_buttons.clear()
+	for button in get_children() :
+		if button is LetterButton :
+			grid_buttons.append(button)
 func _initialize_buttons (button_array : Array[LetterButton]) :
 	for button_node in button_array :
 		button_node.choose_letter()
@@ -152,7 +160,7 @@ func _recognize_words ():
 	if _is_word_long_enough(selected_buttons,minimum_word_length,maximum_word_length) == false : return
 	if already_used_word(selected_buttons) == false : return
 	if banned_words.has(current_word) == true : return
-	if Input.is_action_just_pressed("ui_left") :
+	if Input.is_action_just_pressed("ui_up") :
 		emit_signal("selected_word",current_word)
 		print("string of letter | "+str(current_word)+" | recognized as word")
 		await SignalBus.word_logic_completed
