@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg6rsyw1l2bl2"]
+
+[ext_resource type="Material" uid="uid://7mfixe5x1xi8" path="res://Assets/Visuals/Shaders/OutlineShader.tres" id="1_vim0p"]
+[ext_resource type="Texture2D" uid="uid://dkfon6pxxvtpy" path="res://Assets/Visuals/Drawings/Untitled__2_-removebg-preview.png" id="2_cra4f"]
+[ext_resource type="Script" path="res://Coding/return_button.gd" id="3_6gtri"]
+
+[sub_resource type="Animation" id="Animation_fs53k"]
+resource_name = "clicked"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cm2q3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qaacw"]
+_data = {
+"RESET": SubResource("Animation_cm2q3"),
+"clicked": SubResource("Animation_fs53k")
+}
+
+[node name="return_button" type="TextureButton" node_paths=PackedStringArray("_animator")]
+material = ExtResource("1_vim0p")
+anchors_preset = -1
+anchor_left = -0.00925926
+anchor_top = -0.00520834
+anchor_right = 0.101852
+anchor_bottom = 0.0572917
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+pivot_offset = Vector2(50, 50)
+texture_normal = ExtResource("2_cra4f")
+script = ExtResource("3_6gtri")
+_animator = NodePath("animator")
+metadata/_edit_use_anchors_ = true
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qaacw")
+}

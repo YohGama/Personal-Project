@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvvt2vxownfkh"]
+
+[ext_resource type="FontFile" uid="uid://bjt7fw6oqjd3t" path="res://Assets/Visuals/Fonts/Font.ttf" id="1_wyqty"]
+[ext_resource type="Script" path="res://Coding/Scoring system/score.gd" id="1_xkk7a"]
+[ext_resource type="Script" path="res://Coding/dynamic_font_resize.gd" id="2_m6bvx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8nou"]
+font = ExtResource("1_wyqty")
+font_size = 200
+font_color = Color(0.784314, 0.862745, 1, 1)
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Score logic" type="Control" node_paths=PackedStringArray("score_label")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xkk7a")
+score_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(250, 180)
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 100
+text = "100"
+label_settings = SubResource("LabelSettings_m8nou")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_m6bvx")
+min_font_size = 50
+max_font_size = 200
+metadata/_edit_use_anchors_ = true

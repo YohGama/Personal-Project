@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnpqcey4pwx8l"]
+
+[ext_resource type="PackedScene" uid="uid://cjmbxe41pbm6" path="res://Scenes/Word Gameplay/Letter/letter_button.tscn" id="1_t1v23"]
+[ext_resource type="Shader" path="res://Assets/Visuals/Shaders/Highlether.gdshader" id="2_dc4ko"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asvkr"]
+resource_local_to_scene = true
+shader = ExtResource("2_dc4ko")
+shader_parameter/outline_color = Color(0.145266, 0.145266, 0.145266, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/darkness_factor = 0.0
+
+[node name="World" type="Node2D"]
+
+[node name="LetterButton" parent="." instance=ExtResource("1_t1v23")]
+material = SubResource("ShaderMaterial_asvkr")
+
+[node name="Camera2D" type="Camera2D" parent="."]

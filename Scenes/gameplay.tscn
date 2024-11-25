@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkxrgg7agt4vf"]
+
+[ext_resource type="Script" path="res://Coding/gameplay.gd" id="1_x4ldt"]
+[ext_resource type="PackedScene" uid="uid://dvvt2vxownfkh" path="res://Scenes/score.tscn" id="1_xals5"]
+[ext_resource type="PackedScene" uid="uid://bf6kslngcse2u" path="res://Scenes/Word Gameplay/word_gameplay.tscn" id="2_wshug"]
+[ext_resource type="PackedScene" uid="uid://bg6rsyw1l2bl2" path="res://Scenes/return_button.tscn" id="4_jd44x"]
+[ext_resource type="Shader" path="res://Assets/Visuals/Shaders/Outline.gdshader" id="5_ax77g"]
+[ext_resource type="PackedScene" uid="uid://6asgmi0qqafi" path="res://Scenes/setting_button.tscn" id="6_skp1t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2c5j"]
+resource_local_to_scene = true
+shader = ExtResource("5_ax77g")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h405a"]
+resource_local_to_scene = true
+shader = ExtResource("5_ax77g")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[node name="Gameplay" type="Control" node_paths=PackedStringArray("word_logic", "score_logic")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4ldt")
+word_logic = NodePath("Word logic")
+score_logic = NodePath("Score logic")
+metadata/_edit_use_anchors_ = true
+
+[node name="return_button" parent="." instance=ExtResource("4_jd44x")]
+material = SubResource("ShaderMaterial_l2c5j")
+layout_mode = 1
+anchor_left = 0.0333333
+anchor_top = 0.0125
+anchor_right = 0.0333333
+anchor_bottom = 0.0125
+offset_left = 14.0
+offset_top = 36.0
+offset_right = 134.0
+offset_bottom = 156.0
+
+[node name="Score logic" parent="." instance=ExtResource("1_xals5")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49537
+anchor_top = 0.0708333
+anchor_right = 0.49537
+anchor_bottom = 0.0708333
+offset_left = 5.0
+offset_top = 14.0
+offset_right = 5.0
+offset_bottom = 14.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Word logic" parent="." instance=ExtResource("2_wshug")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 140.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="setting_button" parent="." instance=ExtResource("6_skp1t")]
+material = SubResource("ShaderMaterial_h405a")
+layout_mode = 0
+offset_left = 920.0
+offset_top = 60.0
+offset_right = 1040.0
+offset_bottom = 180.0
